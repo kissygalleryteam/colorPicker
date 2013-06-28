@@ -1,0 +1,13 @@
+{
+    "name": "colorPicker",
+    "version": "1.0",
+    "desc": "KISSY取色器插件",
+    "cover": "",
+    "author": {
+        "name": "Letao",
+        "email": "mailzwj@126.com",
+        "page": "http://www.seejs.com"
+    },
+    "type": "kissy-pie",
+    "type-url": "http://abc.alibaba-inc.com/r/kissy-pie"
+}
