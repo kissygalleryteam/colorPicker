@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>KISSY取色器插件</title>
+    <script src="http://a.tbcdn.cn/s/kissy/1.3.0/kissy-min.js" charset="utf-8"></script>
+</head>
+<body>
+<input type="text" name="" id="showColorSelected">&nbsp;
+<input type="button" value="选择颜色" id="colorPickerTrigger">
+<script>
+    var S = KISSY;
+    S.config({
+        packages:[
+            {
+                name:"kg",
+                path:"http://g.tbcdn.cn/kg/",
+                charset:"utf-8",
+                ignorePackageNameInUri:true
+            }
+        ]
+    });
+
+    if (S.Config.debug) {
+        var srcPath = "../";
+        S.config({
+            packages:[
+                {
+                    name:"kg/colorPicker/2.0.0",
+                    path:srcPath,
+                    charset:"utf-8",
+                    ignorePackageNameInUri:true
+                }
+            ]
+        });
+    }
+
+
+    S.use('kg/colorPicker/2.0.0/index,kg/colorPicker/2.0.0/index.css', function (S, ColorPicker) {
+        var colorPicker = new ColorPicker({
+           defaultColor: "#f50",
+           trigger: "#colorPickerTrigger",
+           complete: function(){
+                var color = colorPicker.getColor();
+                var blank = parseInt("ffffff", 16);
+                var hex = parseInt(color.substr(1), 16);
+                var bgc = (blank - hex).toString(16);
+                while(bgc.length < 6){
+                    bgc = "0" + bgc;
+                }
+                S.one("#showColorSelected").val(color).css({"color": color, "background-color": "#" + bgc});
+           }
+        });
+    });
+</script>
+</body>
+</html>
