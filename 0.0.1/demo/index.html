@@ -1,33 +1,46 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset="utf-8"/>
-<title>Color</title>
-<script src="//g.assets.daily.taobao.net/kissy/k/6.0.0/seed-min.js" data-config="{combine:true}"></script>
+    <meta charset="utf-8" />
+    <title>Color</title>
+    <script src="//g.assets.daily.taobao.net/kissy/k/6.0.0/seed-min.js" data-config="{combine:true}"></script>
 </head>
+
 <body>
-<script>
-KISSY.use('kg/color/0.0.1/', function(S, Color) {
-	var color = new Color(80, 255, 200, 120);
-	console.log('getHSL: ', color.getHSL());
-	console.log('toHSL: ', color.toHSL());
-	console.log('toHSLA: ', color.toHSLA());
-	console.log('toRGB: ', color.toRGB());
-	console.log('toRGBA: ', color.toRGBA());
-	console.log('toHex: ', color.toHex());
-	console.log('getHSV: ', color.getHSV());
-	console.log('setHSV: ', color.setHSV({
-		h: 20,
-		s: 10,
-		v: 60		
-	}));
-	console.log('setHSL: ', color.setHSL({
-		h: 20,
-		s: 10,
-		v: 60		
-	}));
-	console.log('static parse: ', Color.parse('#333'));
-});
-</script>
+    <script>
+        KISSY.use('kg/color/0.0.1/', function(S, Color)
+        {
+            var color = new Color(
+            {
+				r: 255,
+				g: 200,
+				b: 120,
+				a: 0.8
+            });
+            console.log('getHSL: ', color.getHSL());
+            console.log('toHSL: ', color.toHSL());
+            console.log('toHSLA: ', color.toHSLA());
+            console.log('toRGB: ', color.toRGB());
+            console.log('toRGBA: ', color.toRGBA());
+            console.log('toHex: ', color.toHex());
+            console.log('getHSV: ', color.getHSV());
+            console.log('setHSV: ', color.setHSV(
+            {
+                h: 20,
+                s: 10,
+                v: 60
+            }));
+            console.log('setHSL: ', color.setHSL(
+            {
+                h: 20,
+                s: 10,
+                v: 60
+            }));
+            console.log('static parse: ', Color.parse(
+                'rgba(255, 200, 120, 0.8)'));
+        });
+    </script>
 </body>
+
 </html>
