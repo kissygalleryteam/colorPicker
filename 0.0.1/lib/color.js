@@ -168,7 +168,8 @@ Color.prototype = {
             });
             cfg = current;
         }
-        self.set(hsv2rgb(cfg));
+		mix(self, hsv2rgb(cfg));
+        //self.set(hsv2rgb(cfg));
     },
 
     /**
@@ -190,7 +191,8 @@ Color.prototype = {
             });
             cfg = current;
         }
-        self.set(hsl2rgb(cfg));
+		mix(self, hsl2rgb(cfg));
+        //self.set(hsl2rgb(cfg));
     }
 };
 

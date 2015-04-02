@@ -1,7 +1,7 @@
 /*
 Copyright 2015, kissy-color@1.0.2
 MIT Licensed
-build time: Wed, 04 Feb 2015 12:19:40 GMT
+build time: Thu, 02 Apr 2015 01:44:40 GMT
 */
 define("kg/color/0.0.1/index", [], function(require, exports, module) {
 
@@ -155,7 +155,7 @@ color = function (exports) {
         });
         cfg = current;
       }
-      self.set(hsv2rgb(cfg));
+      mix(self, hsv2rgb(cfg));
     },
     /**
      * Set value by hsl
@@ -179,7 +179,7 @@ color = function (exports) {
         });
         cfg = current;
       }
-      self.set(hsl2rgb(cfg));
+      mix(self, hsl2rgb(cfg));
     }
   };
   mix(Color, {
